@@ -1,5 +1,5 @@
 var express = require('express');
-var openshift = require('openshift-express'),
+var openshift = require('openshift-express');
 var app = express();
 var http = require('http');
 
