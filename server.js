@@ -1,10 +1,12 @@
 var http = require('http');
+const express = require('express');
 
 var port = process.env.PORT || 8080;
+const app = express();
 
-http.createServer(function (request, response) {
-  response.writeHead(200, {"Content-Type": "text/plain"});
-  response.end("Hello from OpenShift\n");
-}).listen(port);
+
+app.listen(port, () => {
+	console.log('Server started on port 3000');
+});
 
 console.log("Server running on port " + port);
