@@ -15,7 +15,7 @@ app.get('/', function(req, res) {
 http.createServer(function (request, response) {
   response.writeHead(200, {"Content-Type": "text/plain"});
 	response.end("Hello from OpenShift\n");
-}).listen(port);
+}).listen(server_port);
 
 
 // server listens in on port
