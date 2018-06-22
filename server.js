@@ -1,19 +1,19 @@
 var express = require('express');
-var openshift = require('openshift-express');
 var app = express();
 var http = require('http');
 
+app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 8080); //testing
+app.set('ip', process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'); //testing
 
-var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
-var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
  
-app.get('/', function(req, res) {
+// server listens in on port
+http.createServer(app).listen(app.get('port'), app.get('ip'), function(){ //testing
+  console.log('Express server listening on port ' + app.get('port'));
+});
+
+
+app.get('/tryme', function(req, res) {
 
 	res.end('Hello YouTube!');
 
 });
- 
-// server listens in on port
-app.listen(server_port, server_ip_address, function () {
-	 console.log( "Listening on " + server_ip_address + ", server_port " + server_port );
-}); 
