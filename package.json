@@ -17,6 +17,7 @@
     "express": "^4.13.4",
     "express-favicon": "^2.0.1",
     "openshift-express": "0.0.1",
-    "openshift-rest-client": "^1.4.0"
+    "openshift-rest-client": "^1.4.0",
+    "serve-favicon": "^2.5.0"
   }
 }
