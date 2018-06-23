@@ -3,7 +3,6 @@ fs = require('fs');
 
 server = http.createServer( function(req, res) {
 	res.writeHead(200, {"Content-Type": "text/plain"});
-   res.end("Hello from OpenShift\n");
 
     if (req.method == 'POST') {
         console.log("POST");
@@ -12,6 +11,7 @@ server = http.createServer( function(req, res) {
     {
         console.log("GET");
 		console.log('GET received');
+		res.end("Hello from from GEEET\n");
     }
 
 });
