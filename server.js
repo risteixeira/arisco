@@ -5,14 +5,6 @@ server = http.createServer( function(req, res) {
    res.writeHead(200, {"Content-Type": "text/plain"});
    res.end("Hello from OpenShift\n");
 
-     
-    if (req.url === '/favicon.ico') {
-    res.writeHead(200, {'Content-Type': 'image/x-icon'} );
-    res.end();
-    console.log('favicon requested');
-    return;
-  }
-
     if (req.method == 'POST') {
         console.log("POST");
     }
