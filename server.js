@@ -9,10 +9,16 @@ process.env.BABEL_DISABLE_CACHE = 1;
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-  host: datahost,
-  user: 'userXYS',
-  password: '7UVFpPnkAyqSrt4E',
-  database: 'sampledb'
+  host: process.env.OPENSHIFT_MYSQL_DB_HOST,
+  user: 'userREW',
+  password: 'rita',
+  database: 'ariscodb',
+  port: '3306'
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
 });
 
 
@@ -21,7 +27,6 @@ const express = require('express');
 const favicon = require('express-favicon');
  
 const app = express();
- 
 app.use('/favicon.ico', express.static('images/favicon.ico'));
  
 // Add your routes here, etc.
