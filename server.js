@@ -17,3 +17,8 @@ app.use(favicon(__dirname + '/public/favicon.png'));
 const server = app.listen(port, function(){
     console.log('server is running at %s .', server.address().port);
 });
+
+app.get('/', function(req, res){
+	res.writeHead(200, {"Content-Type": "text/plain"});
+ 	res.end("Hello from OpenShift\n");
+});
