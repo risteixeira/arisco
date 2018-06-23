@@ -22,7 +22,7 @@ const favicon = require('express-favicon');
  
 const app = express();
  
-app.use(favicon(__dirname + '/public/favicon.png'));
+app.use(favicon(path.join(__dirname,'public','images','favicon.ico')));
  
 // Add your routes here, etc.
  
