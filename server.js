@@ -1,19 +1,23 @@
-var express = require('express');
-var app = express();
-var http = require('http');
+http = require('http');
+fs = require('fs');
 
-app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 8080); //testing
-app.set('ip', process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'); //testing
+server = http.createServer( function(req, res) {
+	res.writeHead(200, {"Content-Type": "text/plain"});
+   res.end("Hello from OpenShift\n");
 
- 
-// server listens in on port please miga
-http.createServer(app).listen(app.get('port'), app.get('ip'), function(){ //testing
-  console.log('Express server listening on port ' + app.get('port'));
-});
-
-
-app.get('/tryme', function(req, res) {
-
-	res.end('Hello YouTube!');
+    if (req.method == 'POST') {
+        console.log("POST");
+    }
+    else
+    {
+        console.log("GET");
+		console.log('GET received');
+    }
 
 });
+
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var host = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+
+server.listen(port, host);
+console.log('Listening at http://' + host + ':' + port);
