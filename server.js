@@ -19,6 +19,7 @@ server = http.createServer( function(req, res) {
 
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var host = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+process.env.BABEL_DISABLE_CACHE = 1;
 
 server.listen(port, host);
 console.log('Listening at http://' + host + ':' + port);
