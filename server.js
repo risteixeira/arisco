@@ -10,7 +10,7 @@ const favicon = require('express-favicon');
  
 const app = express();
  
-//app.use(favicon(__dirname + '/public/favicon.png'));
+app.use(favicon(__dirname + '/public/favicon.png'));
  
 // Add your routes here, etc.
  
@@ -21,4 +21,9 @@ const server = app.listen(port, function(){
 app.get('/', function(req, res){
 	res.writeHead(200, {"Content-Type": "text/plain"});
  	res.end("Hello from OpenShift\n");
+});
+
+app.get('/rita', function(req, res){
+	res.writeHead(200, {"Content-Type": "text/plain"});
+ 	res.end("Ola eu sou a Rita yey miga\n");
 });
