@@ -3,16 +3,7 @@ fs = require('fs');
 
 server = http.createServer( function(req, res) {
 	res.writeHead(200, {"Content-Type": "text/plain"});
-
-    if (req.method == 'POST') {
-        console.log("POST");
-    }
-    else
-    {
-        console.log("GET");
-		console.log('GET received');
-		res.end("Hello from from GEEET\n");
-    }
+   res.end("Hello from OpenShift\n");
 
 });
 
