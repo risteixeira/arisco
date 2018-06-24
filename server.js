@@ -12,8 +12,7 @@ var con = mysql.createConnection({
   host: process.env.OPENSHIFT_MYSQL_DB_HOST,
   user: 'userQAX',
   password: 'dFlglsN0cPaAiTji',
-  database: 'sampledb',
-  port: process.env.OPENSHIFT_MYSQL_DB_PORT
+  database: 'sampledb'
 });
 
 con.connect(function(err) {
