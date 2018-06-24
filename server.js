@@ -10,9 +10,9 @@ var mysql = require('mysql');
 
 var con = mysql.createConnection({
   host: process.env.OPENSHIFT_MYSQL_DB_HOST,
-  user: 'userREW',
+  user: 'ana',
   password: 'rita',
-  database: 'ariscodb',
+  database: 'sampledb',
   port: '3306'
 });
 
