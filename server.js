@@ -9,7 +9,7 @@ process.env.BABEL_DISABLE_CACHE = 1;
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-  host: process.env.OPENSHIFT_MYSQL_DB_HOST,
+  host: process.env.MYSQL_SERVICE_HOST,
   user: 'userNWC',
   password: '5tp32HUgiKFWfETv',
   database: 'sampledb'
