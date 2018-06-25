@@ -10,8 +10,8 @@ var mysql = require('mysql');
 
 var con = mysql.createConnection({
   host: process.env.OPENSHIFT_MYSQL_DB_HOST,
-  user: 'userQAX',
-  password: 'dFlglsN0cPaAiTji',
+  user: 'userNWC',
+  password: '5tp32HUgiKFWfETv',
   database: 'sampledb'
 });
 
