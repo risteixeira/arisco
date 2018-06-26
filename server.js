@@ -11,7 +11,7 @@ process.env.BABEL_DISABLE_CACHE = 1;
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-  host: hostBD,
+  host: 'mysql://mysql:3306/',
   user: 'userI6O',
   password: 'RfnOWqcyKt2ThInd',
   database: 'sampledb'
@@ -33,7 +33,7 @@ app.use('/favicon.ico', express.static('images/favicon.ico'));
 // Add your routes here, etc.
  
 const server = app.listen(port, function(){
-    console.log('server is running at %s .', server.address().port);
+    console.log('server is running at %s .', server.address().port + server.address().host);
     console.log("o que tiro daqui é host->" + hostBD);
     console.log("o que tiro daqui é host ->" + datahost);
     console.log("lasone ->" + trythis);
