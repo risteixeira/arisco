@@ -1,7 +1,7 @@
 http = require('http');
 fs = require('fs');
 port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
-var host = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+var host = process.env.OPENSHIFT_NODEJS_IP || '10.130.70.1:3306';
 
 var datahost = process.env.OPENSHIFT__DB_HOST ;
 var hostBD = process.env.OPENSHIFT_MYSQL_DB_HOST;
