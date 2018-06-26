@@ -4,12 +4,13 @@ port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var host = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 
 var datahost = process.env.OPENSHIFT__DB_HOST ;
+var hostBD = process.env.OPENSHIFT_MYSQL_DB_HOST;
 process.env.BABEL_DISABLE_CACHE = 1;
 
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-  host: process.env.OPENSHIFT_MYSQL_DB_HOST ,
+  host: hostBD,
   user: 'userRTD',
   password: 'S11I5gf6ipAEsqbm',
   database: 'sampledb'
@@ -32,8 +33,8 @@ app.use('/favicon.ico', express.static('images/favicon.ico'));
  
 const server = app.listen(port, function(){
     console.log('server is running at %s .', server.address().port);
-    console.log("o que tiro daqui é host->" + process.env.OPENSHIFT_MYSQL_DB_HOST);
-    console.log("o que tiro daqui é host ->" + process.env.OPENSHIFT_MYSQL_DB_PORT);
+    console.log("o que tiro daqui é host->" + hostBD);
+    console.log("o que tiro daqui é host ->" + datahost);
 });
 
 app.get('/', function(req, res){
