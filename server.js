@@ -10,10 +10,10 @@ process.env.BABEL_DISABLE_CACHE = 1;
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-  host     : 'mysql-qqqd.a3c1.starter-us-west-1.openshiftapps.com/',
-  port     : '3306',
-  user: 'aaaaa',
-  password: 'aaaa',
+  host     : hostBD,
+  port     : portBD,
+  user: 'rita',
+  password: 'rita',
   database: 'sampledb'
 });
 
