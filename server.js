@@ -9,9 +9,9 @@ process.env.BABEL_DISABLE_CACHE = 1;
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-  host: process.env.MYSQL_SERVICE_HOST,
-  user: 'userNWC',
-  password: '5tp32HUgiKFWfETv',
+  host: process.env.OPENSHIFT_MYSQL_DB_HOST ,
+  user: 'userRTD',
+  password: 'S11I5gf6ipAEsqbm',
   database: 'sampledb'
 });
 
@@ -32,6 +32,8 @@ app.use('/favicon.ico', express.static('images/favicon.ico'));
  
 const server = app.listen(port, function(){
     console.log('server is running at %s .', server.address().port);
+    console.log("o que tiro daqui é host->" + process.env.OPENSHIFT_MYSQL_DB_HOST);
+    console.log("o que tiro daqui é host ->" + process.env.OPENSHIFT_MYSQL_DB_PORT);
 });
 
 app.get('/', function(req, res){
