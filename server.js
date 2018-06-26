@@ -5,7 +5,7 @@ var host = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 
 var datahost = process.env.OPENSHIFT__DB_HOST ;
 var hostBD = process.env.OPENSHIFT_MYSQL_DB_HOST;
-var try = process.env.OPENSHIFT_MONGODB_DB_HOST;
+var trythis = process.env.OPENSHIFT_MONGODB_DB_HOST;
 process.env.BABEL_DISABLE_CACHE = 1;
 
 var mysql = require('mysql');
@@ -36,7 +36,7 @@ const server = app.listen(port, function(){
     console.log('server is running at %s .', server.address().port);
     console.log("o que tiro daqui é host->" + hostBD);
     console.log("o que tiro daqui é host ->" + datahost);
-    console.log("lasone ->" + try);
+    console.log("lasone ->" + trythis);
 });
 
 app.get('/', function(req, res){
